@@ -77,7 +77,7 @@ In generale $ a_0 =(a_0) $
 
 Si può fare lo stesso ragionamento con $  G({n^2}) $ e usando la derivata di un rapporto:
 $  G({n^2}) = t + 4t^2 + 9t^3+...=  G({n*n})= t DG(n) = t D  \frac{t}{(1-t)^2} = t  \frac{(1-t)^2 2t(1-t)}{(1-t)^4} = $
-$ =  \frac{t(1-t+2t)}{(1-t)^3} =  \frac{t(1-t)}{(1-t)^3} $  
+$ =  \frac{t(1-t+2t)}{(1-t)^3} =  \frac{t(t+1)}{(1-t)^3} $  
 
 Per $ a_n = 2n+ \frac{1}{3}n^2 $ si possono usare i risultati trovati:
 $  G(a_{n})= 2G(n)+\frac{1}{3}G(n^2) $
