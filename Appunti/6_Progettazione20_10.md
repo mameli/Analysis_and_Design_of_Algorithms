@@ -121,7 +121,7 @@ $  \frac{a_{n+1}}{a_n} =  \frac{n!}{(n+1)!} =  \frac{1}{n+1} $
 $ (n+1)a_{n+1} = a_n $  
 Si deve controllare che sia vero per ogni n, è semplice vedere che $ \forall n $
 
-$  G((n+1)a_{n+1}) =  G(a_{n}) $
+$  G((n+1)a_{n+1}) =  DG(a_{n}) $
 Si può associare $ b_{n+1} = (n+1)a_{n+1} $  e $ b_n = na_n , b_0 =0 $
 
 $  G(b_{n+1}) =  \frac{ G(b_{n})-b_0}{t} =  \frac{ G(na_{n})-0}{t} $
