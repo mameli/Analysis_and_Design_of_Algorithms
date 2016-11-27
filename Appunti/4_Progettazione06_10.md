@@ -30,7 +30,7 @@ Quindi $ P_n = n! $
 
 ## Disposizioni
 
-Per n oggetti quanti sono i gruppi dato k?
+Per n oggetti quanti sono i gruppi dato $k$?
 Si indicano con $ D_{n,k} = $ numero di disposizioni di n oggetti in gruppi di k
 Per esempio $n=4$ e $k=2$ di $a,b,c,d$ cioè $D_{4,2} = 12$
 $(a,b),(b,a),(a,c),(c,a),(a,d),(d,a),(b,c),(c,b),(b,a),(d,b),(c,d),(d,c)$
@@ -89,11 +89,11 @@ $  \binom{1/2}{3}  =  \frac{1/2 (1/2-1)(1/2-2)}{3!} =  \frac{1}{16}$
 ### Proprietà per i reali
 
 #### Numeri Negativi
-$  \binom{-n}{k} =  \frac{-n(-n-1)...(-n-k-1)}{k!}$
+$  \binom{-n}{k} =  \frac{-n(-n-1)...(-n-k+1)}{k!}$
 
-$ \qquad = (-1)^k  \frac{n(n+1)(n+2)...(n+k+1)}{k!}  \frac{1*2 ...(n-1)}{1*2 ... (n-1)}$
+$ \qquad = (-1)^k  \frac{n(n+1)(n+2)...(n+k-1)}{k!}  \frac{1*2 ...(n-1)}{1*2 ... (n-1)}$
 
-$ \qquad = (-1)^k  \frac{(n+1-k)!}{k!(n-1)!} = (-1)^k  \binom{n+k-1}{k} $
+$ \qquad = (-1)^k  \frac{(n-1+k)!}{k!(n-1)!} = (-1)^k  \binom{n+k-1}{k} $
 
 Se ci da noia un numero negativo quindi si può trasformare
 
@@ -131,7 +131,7 @@ Si mette in evidenza il 2 dei denominatori poi si moltiplica per i pari sopra e 
 
 $   \frac{(-1)^n}{2^n}  \frac{1*3...(2n-1)}{n!}  \frac{2*4*6...2n}{2*4*6...2n} =  \frac{(-1)^n (2n)!}{2^n(n!) 2^n (n!)}$
 
-$  = \frac{(-1)^n (2n)!}{4^n(n!)(n!)} = \frac{(-1)^n}{4^n} \binom{2n}{n}$
+$  = \frac{(-1)^n (2n)!}{4^n(n!)(n!)}=\frac{(-1)^n (2n)!}{4^n(n!)(2n-n)!} = \frac{(-1)^n}{4^n} \binom{2n}{n}$
 
 In modo simile per altri valori sarà ad esempio:
 

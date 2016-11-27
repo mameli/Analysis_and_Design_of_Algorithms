@@ -40,6 +40,7 @@ Ora si cerca la soluzione di $ (t-4t^2)a'(t) + (1-2t)a(t) = 1 $
   $  \frac{k}{t}+ \frac{r}{(1-4t)} =  \frac{k(1-4t)+rt}{t(1-4t)} $
   $  \frac{k -4kt+rt}{t(1-4t)} $
 
+  Si associano i valori di $k$ e $r$ all'equazione $\frac{-1+2t}{t-4t^2}$
   $ \begin{cases} k=-1 \\ -4k+r = 2 \end{cases}  
     \begin{cases} k=-1 \\ r = -2 \end{cases} $  
   da cui :  $  \frac{-1}{t} - \frac{2}{1-4t} $
@@ -49,7 +50,7 @@ Ora si cerca la soluzione di $ (t-4t^2)a'(t) + (1-2t)a(t) = 1 $
   $ \rightarrow \rho(t) =  \frac{\sqrt{(1-4t)}}{t} $
 
 + $( \frac{a(t)}{\frac{\sqrt{(1-4t)}}{t}})' =  \frac{1}{\frac{\sqrt{(1-4t)}}{t} (t-4t^2)}  $
-  $ =\frac{1}{\sqrt{(1-4t)}(1-4t)} $
+  $ =\frac{1}{\sqrt{(1-4t)}(1-4t)} =\frac{C(t)}{\rho(t)A(t)} $
   $ t  \frac{a(t)}{\sqrt(1-4t)} = \int_o^t \frac{1}{\sqrt{(1-4t)}(1-4t)} dx = \int_o^t \frac{1}{(1-4t)^{3/2}} dx$
   Sostituzione
   $ 1-4x = y $

@@ -1,7 +1,6 @@
 # Funzioni generatrici
 
-Abbiamo trovato le funzioni per i confronti del mergesort, la funzione
-sul numero medio dei confronti e una funzione analoga per gli scambi.
+Abbiamo trovato le funzioni per i confronti del quicksort e una funzione analoga per gli scambi.
 
 La ricorrenza di fibonacci è detta lineare perché i coef. sono costanti.
 
@@ -18,8 +17,7 @@ Indichiamo con $ G $ l'operatore funzione generatrice.
 
 $ G_n^t(a_n) =  \sum_{n\geq 0}^{}a_nt^n = a_0+a_1t+a_2t^2+...$
 
-Non essendoci una differenza sostanziale tra le sequenze e le sommatoria di espressioni
-esponenziali, le associamo ad una funzione che chiameremo appunto funzione generatrice.
+Non essendoci una differenza sostanziale tra le sequenze e la sommatoria di espressioni esponenziali, associamo le sequenze ad una funzione che chiameremo appunto funzione generatrice.
 Facciamo questa associazione perché le funzioni generatrici sono più facili da studiare.
 Se non si sono ambiguità si scriverà soltanto $ G(a_n) $
 t è un segnaposto e di solito non ha significato. Indica solo la posizione del
@@ -34,7 +32,7 @@ valore della sommatoria. $ t^2 $ indica il secondo posto.
 
   Dimostrazione :
   $ G(\alpha a_n+ \beta b_n) =  \sum_{n\geq 0}^{} (\alpha a_n +\beta b_n) t^n$
-  $ \qquad \qquad \qquad =  \alpha \sum_{}^{} a_n t^n + \beta  \sum_{}^{}b_n t^n$  
+  $ \qquad \qquad \qquad =  \alpha \underbrace{\sum_{}^{} a_n t^n}_\text{ G(a)} + \beta  \sum_{}^{}b_n t^n$  
 
   il prima sommatoria corrisponde a $ G (a_n) $
 
@@ -95,12 +93,12 @@ valore della sommatoria. $ t^2 $ indica il secondo posto.
   Per esempio:
 
   $\sum_{}^{}2^na_nt^n =  \sum_{}^{} a_n(2t)^n$
-  $ =  G(a_n) o G(2t)  $
+  $ =  G(a_n) \circ G(2t)  $
   In questo caso 2t è la funzione generatrice (per quanto semplice) :
   $ 2t \rightarrow (0,2,0,0,0,0,...) $   
 
 ### Principio di identità
-  $a_n = b_n \quad \forall n \quad <=> \quad G(a_n)= G(b_n)$
+  $a_n = b_n \quad \forall n \quad \iff \quad G(a_n)= G(b_n)$
   C'è una equivalenza tra funzioni generatrici e sequenze.
 
 ### Metodo del rapporto

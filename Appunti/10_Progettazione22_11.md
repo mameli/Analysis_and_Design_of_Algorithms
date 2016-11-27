@@ -137,11 +137,11 @@ $
 \end{array}
 $
 Metto 1 o 0 a seconda se c'è corrispondenza tra le stringhe
-$ L(t) =  \sum_{}^{}c_it^i = c_0t^0+c_1t^1+c_2t^2=1$ Polinomio
+$ L(t) =  \sum_{}^{}c_it^i = c_0t^0+c_1t^1+c_2t^2=1$ Polinomio di correlazione
 
-Per trovare la funzione generatrice di un linguaggio che evita un pattern basta trovare il polinomio, poi $ L(t) =  \frac{c(t)}{t^k+(1-mt)c(t)} $
+Per trovare la funzione generatrice di un linguaggio che evita un pattern basta trovare il polinomio di correlazione, poi $ L(t) =  \frac{c(t)}{t^k+(1-mt)c(t)} $
 con $k = $cardinalità di $p = |p|$ e $m= |A|$
 
 Per $p = abb$ abbiamo $k = 3$ e $m = 2$
 $L(t) =  \frac{1}{t^3+(1-2t)*1}$
-$  \frac{1}{1-2t} -  \frac{t^3}{(1-t)(1-2t)(1-t-t^2)} =  \frac{1}{1-2t+t^3} \qquad\blacksquare$ 
+$  \frac{1}{1-2t} -  \frac{t^3}{(1-t)(1-2t)(1-t-t^2)} =  \frac{1}{1-2t+t^3} \qquad\blacksquare$

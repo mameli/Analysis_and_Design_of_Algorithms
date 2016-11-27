@@ -12,7 +12,7 @@ Quindi non vale per ogni N.
 $ F_n $ è lineare (i termini non sono quadratici o altro) e a coefficienti costanti (i termini che moltiplicano sono costanti).  
 
 Per farla definire sempre si fa uno shift $ F_{n+2} = F_{n+1}+F_n$
-$ F_{n+2} \leftrightarrow  G(F_{n+2}) =  G(F_{n+1}+F_n)$
+$ F_{n+2} \iff  G(F_{n+2}) =  G(F_{n+1}+F_n)$
 
 $G(F_{n+2}) =  G(F_{n+1}+F_n)$
 $ G(F_{n+2}) $ e $G(F_{n+1}) $ si possono scrivere come segue:
@@ -60,7 +60,7 @@ $  DG(a_{n}) = p  G(a_{n}) -t D  G(a_{n})$ si introduce un eq differenziale del 
 $ (1+t)a'(t) = pa(t) $
 $  \frac{a'(t)}{a(t)} =  \frac{p}{1+t} $
 $ \log a(t) = p\log (1+t)+k$  
-K deve essere 0
+$k$ deve essere 0
 quindi : $ a(t) = (1+t)^p $
 
 ---
