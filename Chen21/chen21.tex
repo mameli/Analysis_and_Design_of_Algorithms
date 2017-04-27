@@ -1,0 +1,483 @@
+\documentclass[12pt,reqno]{article}
+
+\usepackage[usenames]{color}
+\usepackage{amssymb}
+\usepackage{graphicx}
+\usepackage{amscd}
+
+\usepackage[colorlinks=true,
+linkcolor=webgreen,
+filecolor=webbrown,
+citecolor=webgreen]{hyperref}
+
+\definecolor{webgreen}{rgb}{0,.5,0}
+\definecolor{webbrown}{rgb}{.6,0,0}
+
+\usepackage{color}
+\usepackage{fullpage}
+\usepackage{float}
+
+\usepackage{psfig}
+\usepackage{graphics,amsmath,amssymb}
+\usepackage{amsthm}
+\usepackage{amsfonts}
+\usepackage{latexsym}
+\usepackage{epsf}
+
+\setlength{\textwidth}{6.5in}
+\setlength{\oddsidemargin}{.1in}
+\setlength{\evensidemargin}{.1in}
+\setlength{\topmargin}{-.1in}
+\setlength{\textheight}{8.4in}
+
+\newcommand{\seqnum}[1]{\href{http://oeis.org/#1}{\underline{#1}}}
+
+\begin{document}
+
+\begin{center}
+\epsfxsize=4in
+\leavevmode\epsffile{logo129.eps}
+\end{center}
+
+\theoremstyle{plain}
+\newtheorem{theorem}{Theorem}
+\newtheorem{corollary}[theorem]{Corollary}
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{proposition}[theorem]{Proposition}
+
+\theoremstyle{definition}
+\newtheorem{definition}[theorem]{Definition}
+\newtheorem{example}[theorem]{Example}
+\newtheorem{conjecture}[theorem]{Conjecture}
+
+\theoremstyle{remark}
+\newtheorem{remark}[theorem]{Remark}
+
+\begin{center}
+\vskip 1cm{\LARGE\bf 
+Interesting Series Associated with Central \\
+\vskip .03in 
+Binomial Coefficients, Catalan Numbers \\
+\vskip .09in
+and Harmonic Numbers
+}
+\vskip 1cm
+\large
+Hongwei Chen\\
+Department of Mathematics\\
+Christopher Newport University\\
+Newport News, VA 23606 \\
+USA\\
+\href{mailto:hchen@cnu.edu}{\tt hchen@cnu.edu} \\
+\end{center}
+
+\vskip .2 in
+
+
+\begin{abstract}
+We establish various generating functions for sequences associated with
+central binomial coefficients, Catalan numbers and harmonic numbers. In
+terms of these generating functions, we obtain a large variety of
+interesting series. Our approach is based on manipulating the
+well-known generating function of the Catalan numbers.
+\end{abstract}
+
+\section{Introduction}
+\label{sec1}
+
+The central binomial coefficients ${2n \choose n }$ and the Catalan numbers 
+$$C_n = \frac{1}{n+1}\,{2n \choose n}$$
+play an important role in many diverse fields such as analysis of algorithms in computer science, combinatorics, number theory and elementary particle physics. Many facts about them can be found in \cite{Gould, Stanley}. Focusing on the infinite series involving these numbers, we notice that the generating function of the central binomial coefficients is given by
+\begin{equation} \label{eq:1}
+\sum_{n=0}^\infty\, {2n \choose n} x^n = \frac{1}{\sqrt{1 - 4x}}.
+\end{equation}
+Integrating (\ref{eq:1}),  we get the generating function of the Catalan numbers as follows:
+\begin{equation} 
+\label{eq:2}
+C(x):= \sum_{n=0}^\infty\,C_n x^n = \frac{2}{1+ \sqrt{1 - 4x}} = \frac{1 - \sqrt{1-4x}}{2x}. 
+\end{equation}
+Lehmer \cite{Lehmer} found numerous interesting series through \eqref{eq:1} by specialization, differentiation and integration. He defines a series to be {\it interesting} if the sum has a closed form in terms of known constants. In search of interesting series associated with central binomial coefficients, Catalan numbers and harmonic numbers, investigators have used many different approaches. For example, by applying the Parseval identity for Fourier series, Borwein et al.\ \cite{Borwein} established several interesting sums involving the harmonic numbers $H_n$. Two elegant results are
+\begin{equation}
+\sum_{n=1}^\infty\,\frac{1}{n^3}\,H_n = \frac{\pi^4}{72}\hspace{0.1in}\mbox{and}\hspace{0.1in} \sum_{n=1}^\infty\,\frac{1}{n^2}\,H_n^2 = \frac{17\pi^4}{360}.
+\end{equation}
+Chu et al.\ \cite{Chu}, by invoking the Gauss summation formula for the hypergeometric series, derived many striking summation identities involving harmonic numbers like
+\begin{equation}
+\sum_{k=0}^n\,{n \choose k}^2H_k = {2n \choose n}(2H_n-H_{2n}).
+\end{equation}
+Recently, by using an appropriate binomial transformation, Boyadzhiev \cite{Boy} obtained the generating functions for the sequences $\binom{2n}{n}H_n$ and $C_nH_n$. And he showed that
+\begin{equation}
+\sum_{n=0}^\infty\,\frac{1}{8^n}\,{2n \choose n}H_n = 2\sqrt{2}\ln\left(\frac{1 + \sqrt{2}}{2}\right)\hspace{0.1in}\mbox{and}\hspace{0.1in} 
+\sum_{n=0}^\infty\,\frac{1}{4^n}\,C_nH_n = 4 \ln 2.
+\end{equation}
+In this paper, by manipulating the $C(x)$ in \eqref{eq:2}, we produce results that match Boyadzhiev's and lead to the discovery of
+more interesting generating functions of sequences, which include the sequences $\binom{2n}{n}(H_{2n} - H_n), C_n(H_{2n} - H_n)$ and $\binom{2n}{n}h_n$, where
+\begin{equation}
+h_n = 1+ \frac{1}{3} + \frac{1}{5} + \cdots + \frac{1}{2n-1}.
+\label{eq:6}
+\end{equation}
+In particular, we obtain the following most interesting series
+\begin{equation}
+\sum_{n=1}^\infty\,\frac{1}{8^n}\,\binom{2n}{n}h_nF_n = \frac{1}{\sqrt{10}}\,\ln 2 + \frac{1}{\sqrt{2}}\,\ln\left(\frac{3 + \sqrt{5}}{2}\right),
+\label{eq:7}
+\end{equation}
+\begin{equation}
+\sum_{n=1}^\infty\,\binom{2n}{n}(H_{2n-1} - H_n)\frac{x^n}{n} = \ln^2(C(x)).
+\label{eq:8}
+\end{equation}
+Here $F_n$ is the $n$th Fibonacci number. The identity \eqref{eq:8} is proposed by Knuth in a recent issue of {\it The American Mathematical Monthly} \cite{Knuth}. 
+
+This paper is organized into four sections. In 
+Section~\ref{sec2}, we present the proofs of the main theorems. In 
+Section~\ref{sec3},
+we gather a large variety of interesting series based on the main theorems. We end this paper with two remarks in Section~\ref{sec4}.
+
+\section{The main theorems}
+\label{sec2}
+
+We begin by establishing the generating function of the sequence $\binom{2n}{n}H_n$. In view of 
+$$H_n = \sum_{k=1}^n\,\frac{1}{k} = \int_0^1\,\left(\sum_{k=0}^{n-1}\,t^k\right)\,dt = \int_0^1\,\frac{1- t^n}{1-t}\,dt,$$
+we have
+\begin{eqnarray*}
+\sum_{n=1}^\infty\,\binom{2n}{n}H_n\,x^n & = & \sum_{n=1}^\infty\,\binom{2n}{n}x^n\int_0^1\,\frac{1- t^n}{1-t}\,dt\\
+& = & \int_0^1\,\frac{1}{1-t}\,\left(\sum_{n=1}^\infty\,\binom{2n}{n}\,(x^n - (xt)^n)\right)\,dt\\
+& = & \int_0^1\,\frac{1}{1-t}\left(\frac{1}{\sqrt{1-4x}} - \frac{1}{\sqrt{1 -4xt}}\right)\,dt.
+\end{eqnarray*}
+Here \eqref{eq:1} has been used twice in the last equality. Bernstein's theorem \cite[Thm.\ 9.30, p.\ 243]{Apostol} justifies interchanging the order of integration and summation because of the positivity of the coefficients. Calculating the definite integral, for example, with Mathematica, we recapture Boyadzhiev's generating function of $\binom{2n}{n}H_n$.
+
+\begin{theorem} Let $H_n$ be the $n$th harmonic number. Then
+\begin{equation} 
+\sum_{n=1}^\infty\,\binom{2n}{n}H_n\,x^n = \frac{2}{\sqrt{1-4x}}\,\ln\left(\frac{1+\sqrt{1 -4x}}{2\sqrt{1-4x}}\right). 
+\label{eq:h_gf}
+\end{equation}
+\end{theorem}
+
+As an immediate consequence of~\eqref{eq:h_gf}, integrating both sides of~\eqref{eq:h_gf} with respect to $x$, we reproduce Boyadzhiev's generating function of the sequence $\binom{2n}{n}C_n$.
+
+\begin{corollary} Let $C_n$ be the $n$th Catalan number. Then
+\begin{equation}   \label{eq:c_gf}
+\sum_{n=1}^\infty\,C_nH_n\,x^{n+1} =  \ln 2 + \sqrt{1-4x}\ln(2\sqrt{1-4x}) - (1 + \sqrt{1 -4x})\ln(1+\sqrt{1 -4x})). 
+\end{equation}
+\end{corollary}
+
+Next we turn to determining the generating function for the sequence $\binom{2n}{n}(H_{2n} - H_n)$. Recall \cite[Formula 7.43, Table 351, p.\ 351]{GKP},
+\begin{equation} \label{eq:id1}
+\frac{1}{(1-x)^{m+1}}\,\ln\frac{1}{1-x} = \sum_{n=0}^\infty\,\binom{m+n}{n}(H_{m+n} - H_m)x^n.
+\end{equation}  
+Let $m = n$. Matching the coefficients of $x^n$ in~\eqref{eq:id1} yields
+\begin{equation}  \label{eq:id2}
+\binom{2n}{n}(H_{2n} - H_n) = \sum_{k=1}^n\,\frac{1}{k}\binom{2n-k}{n}.
+\end{equation}
+With~\eqref{eq:id2} in hand, we obtain the following desired generating function.
+
+\begin{theorem} Let $H_n$ be the $n$th harmonic number. Then
+\begin{equation}  \label{eq:hh_gf}
+\sum_{n=1}^\infty\,\binom{2n}{n}(H_{2n} - H_n)\,x^n = - \frac{1}{\sqrt{1-4x}}\,\ln\left(\frac{1+\sqrt{1 -4x}}{2}\right) = \frac{1}{\sqrt{1 -4x}}\ln C(x), \
+\end{equation}
+where $C(x)$, which is given by \eqref{eq:2}, is the generating function of the Catalan numbers.
+\end{theorem}
+
+\begin{proof} In view of~\eqref{eq:id2}, we have
+\begin{eqnarray*}
+\sum_{n=1}^\infty\,\binom{2n}{n}(H_{2n} - H_n)\,x^n & = & \sum_{n=1}^\infty\sum_{k=1}^n\,\,\frac{1}{k}\binom{2n-k}{n}\,x^n\\
+& = & \sum_{k=1}^\infty\,\frac{1}{k}\left(\sum_{n=k}^\infty\,\binom{2n-k}{n}\,x^n\right)\\
+& = & \sum_{k=1}^\infty\,\frac{1}{k}\left(\sum_{m=0}^\infty\,\binom{2m + k}{m+k}\,x^{m+k}\right)\hspace{0.2in}(n = m+k)\\
+& = & \sum_{k=1}^\infty\,\frac{x^k}{k}\left(\sum_{m=0}^\infty\,\binom{2m + k}{m}\,x^m\right).
+\end{eqnarray*}
+Since (see \cite[Formula 5.72, p.\ 203]{GKP} or \cite[A32(b), p.\ 116]{Stanley})
+$$\sum_{m=0}^\infty\,\binom{2m + k}{m}t^m = \frac{1}{\sqrt{1- 4t}}\,\left(\frac{1 - \sqrt{1-4t}}{2t}\right)^k = \frac{C^k(t)}{\sqrt{1 - 4t}},$$
+and $-\ln(1- t) = \sum_{k=1}^\infty\,t^k/k$, then appealing to \eqref{eq:2}, we find that
+\begin{eqnarray*}
+\sum_{n=1}^\infty\,\binom{2n}{n}(H_{2n} - H_n)\,x^n & = &\frac{1}{\sqrt{1- 4x}}\,\sum_{k=1}^\infty\,\frac{1}{k}\,\left(\frac{1 - \sqrt{1-4x}}{2}\right)^k\\
+& = & - \frac{1}{\sqrt{1-4x}}\,\ln\left(\frac{1+\sqrt{1 -4x}}{2}\right)\\
+& = & \frac{1}{\sqrt{1-4x}}\,\ln C(x).
+\end{eqnarray*}
+This proves~\eqref{eq:hh_gf}.
+\end{proof}
+Integrating both sides of~\eqref{eq:hh_gf} with respect to $x$, we obtain the generating function for the sequence $C_n(H_{2n} - H_n)$ as follows:
+
+\begin{corollary} Let $C_n$ be the $n$th Catalan number. Then
+\begin{equation} 
+\label{eq:ch_gf}
+ \sum_{n=1}^\infty\,C_n(H_{2n} - H_n)\,x^n =  \frac{1}{2x}\left[(1-\sqrt{1-4x}) + (1 + \sqrt{1 -4x})\ln\left(\frac{1+\sqrt{1 -4x}}{2}\right)\right]. \end{equation}
+\end{corollary}
+
+Next, dividing both sides of \eqref{eq:1} by $x$ and then integrating from $0$ to $x$, we find that
+$$\sum_{n=1}^\infty\,\binom{2n}{n}\,\frac{x^n}{n} = -2 \ln\left(\frac{1+\sqrt{1- 4x}}{2}\right) = 2\ln C(x).$$
+Repeating the above process one more time gives
+\begin{equation}
+\sum_{n=1}^\infty\,\binom{2n}{n}\frac{x^n}{n^2} = -2 \int_0^x\,\frac{1}{t}\,\ln\left(\frac{1+\sqrt{1- 4t}}{2}\right)dt.
+\label{eq:15}
+\end{equation}
+Dividing both sides of~\eqref{eq:hh_gf} by $x$ then integrating with respect to $x$, we have
+\begin{equation}
+\sum_{n=1}^\infty\,\binom{2n}{n}(H_{2n} - H_n)\,\frac{x^n}{n} = - \int_0^x\,\frac{1}{t\sqrt{1-4t}}\,\ln\left(\frac{1+\sqrt{1 -4t}}{2}\right)\,dt.
+\label{eq:16}
+\end{equation}
+Since $H_{2n} = H_{2n-1} + \frac{1}{2n}$, combining \eqref{eq:15}
+and \eqref{eq:16} yields
+\begin{eqnarray*}
+\sum_{n=1}^\infty\,\binom{2n}{n}(H_{2n-1} - H_n)\frac{x^{n}}{n} & = & \sum_{n=1}^\infty\,\binom{2n}{n}(H_{2n} - H_n)\frac{x^{n}}{n} - \frac{1}{2}\sum_{n=1}^\infty\,\binom{2n}{n}\frac{x^{n}}{n^2}\\
+& = & \int_0^x\,\left(\frac{1}{t} - \frac{1}{t\sqrt{1-4t}}\right)\ln\left(\frac{1+\sqrt{1 -4t}}{2}\right)dt\\
+& = & \int_0^x\,\,2\ln\left(\frac{1+\sqrt{1 -4t}}{2}\right)\,\left(\ln\left(\frac{1+\sqrt{1 -4t}}{2}\right)\right)'dt\\
+& =& \ln^2\left(\frac{1+\sqrt{1 -4x}}{2}\right),
+\end{eqnarray*}
+where we have used 
+$$\left(\ln\left(\frac{1+\sqrt{1 -4t}}{2}\right)\right)' = \frac{1}{2t} - \frac{1}{2t\sqrt{1- 4t}}.$$
+In view of \eqref{eq:2}, we obtain Knuth's beautiful identity as follows:
+
+\begin{theorem} Let $C(x)$ be the generating function of the Catalan
+numbers, which is given by \eqref{eq:2}. Then
+\begin{equation}     
+\sum_{n=1}^\infty\,\binom{2n}{n}(H_{2n-1} - H_n)\frac{x^{n}}{n} = \ln^2C(x).
+\label{eq:k_gf}
+\end{equation}
+\end{theorem}
+
+Combining~\eqref{eq:h_gf} and~\eqref{eq:hh_gf}, we find the generating function of the sequence $\binom{2n}{n}H_{2n}$.
+
+\begin{theorem} Let $H_n$ be the $n$th harmonic number. Then
+\begin{equation}   \label{eq:h2_gf}
+\sum_{n=1}^\infty\,\binom{2n}{n}H_{2n}\,x^n =  \frac{1}{\sqrt{1-4x}}\left[\ln\left(\frac{1+\sqrt{1 -4x}}{2}\right) -2\ln\sqrt{1-4x}\right].
+\end{equation}
+\end{theorem}
+
+Consequently, integrating both sides of~\eqref{eq:h2_gf} yields the generating function of the sequence $C_nH_{2n}$.
+
+\begin{corollary} Let $C_n$ be the $n$th Catalan number. Then
+\begin{equation}  
+\label{eq:ch2_gf}
+\sum_{n=1}^\infty\,C_nH_{2n}\,x^n =  \frac{1}{2x}\left[(1-\sqrt{1-4x}) - (1 + \sqrt{1 -4x})\ln(1+\sqrt{1 -4x}) + \ln 2 + \sqrt{1-4x}\ln(2-8x)\right]. 
+\end{equation}
+\end{corollary}
+
+In view of \eqref{eq:6}, it follows that $h_n = H_{2n} - \frac{1}{2}\,H_n$. Applying~\eqref{eq:h_gf} and~\eqref{eq:h2_gf}, we arrive at
+
+\begin{theorem} Let $h_n$ be given by \eqref{eq:6}. Then
+\begin{equation}  
+\sum_{n=1}^\infty\,\binom{2n}{n}h_n\,x^n =  -\,\frac{1}{\sqrt{1-4x}}\ln\sqrt{1-4x}. 
+\label{eq:hodd_gf}
+\end{equation}
+\end{theorem}
+
+From~\eqref{eq:hodd_gf} we have the immediate corollary:
+
+\smallskip
+
+\begin{corollary} Let $C_n$ be the $n$th Catalan number. Then
+\begin{equation} 
+\sum_{n=1}^\infty\,C_nh_{n}\,x^n =  \frac{1}{2x}\left(1-\sqrt{1-4x} + \sqrt{1-4x}\ln\sqrt{1-4x}\right).
+\label{eq:codd_gf}
+\end{equation}
+\end{corollary}
+
+\section{Interesting series}
+\label{sec3}
+
+Equipped with the series \eqref{eq:h_gf}--\eqref{eq:codd_gf} in closed form, and using similar approaches to those used in \cite{Chen, Lehmer}, we will establish a wide variety of interesting series via specialization, differentiation and integration.
+
+Notice that the series in~\eqref{eq:h_gf} converges on $[-1/4, 1/4)$. Setting $x =  -1/4, 1/8$ and $-1/8$ respectively, we obtain the interesting series
+\begin{eqnarray*}
+\sum_{n=1}^\infty\,\frac{(-1)^n}{4^n}\,\binom{2n}{n}H_n& = & \sqrt{2}\ln\left(\frac{2 + \sqrt{2}}{4}\right),\\
+\sum_{n=1}^\infty\,\frac{1}{8^n}\,\binom{2n}{n}H_n & = & 2\sqrt{2}\ln\left(\frac{1 + \sqrt{2}}{2}\right),\\
+\sum_{n=1}^\infty\,\frac{(-1)^n}{8^n}\,\binom{2n}{n}H_n & = & \frac{2\sqrt{6}}{3}\,\ln\left(\frac{3 + \sqrt{6}}{6}\right).
+\end{eqnarray*}
+Similarly, since the series~\eqref{eq:c_gf} converges for $|x| \leq 1/4$, letting $x = \pm 1/4$ yields
+$$
+\sum_{n=1}^\infty\,\frac{1}{4^n(n+1)}\,\binom{2n}{n}H_n = \sum_{n=1}^\infty\,\frac{1}{4^n}\,C_nH_n = 4\ln 2,
+$$
+$$
+\sum_{n=1}^\infty\,\frac{(-1)^{n+1}}{4^n(n+1)}\,\binom{2n}{n}H_n = \sum_{n=1}^\infty\,\frac{(-1)^{n+1}}{4^n}\,C_nH_n = (4+6\sqrt{2})\ln 2  - 4(1+\sqrt{2})\ln(1 + \sqrt{2}). 
+$$
+Along the same lines, via specialization, generating functions~\eqref{eq:hh_gf},~\eqref{eq:ch_gf}  and \eqref{eq:k_gf}--\eqref{eq:codd_gf} will yield numerous interesting series as examples: we list only one for each.
+\begin{eqnarray*}
+\sum_{n=1}^\infty\,\frac{1}{8^n}\,\binom{2n}{n}(H_{2n} - H_n) & = & \sqrt{2}\ln(4 - 2\sqrt{2}),\\
+\sum_{n=1}^\infty\,\frac{1}{4^n}\,C_n(H_{2n} -H_n) & = & 2(1- \ln 2),\\
+\sum_{n=1}^\infty\,\frac{1}{4^n\,n}\,\binom{2n}{n}(H_{2n-1} - H_n) & = & \ln^22,\\
+\sum_{n=1}^\infty\,\frac{1}{8^n}\,\binom{2n}{n}H_{2n}& = & \frac{\sqrt{2}}{2}\ln\left(\frac{3+2\sqrt{2}}{2}\right),\\
+\sum_{n=1}^\infty\,\frac{1}{4^n}\,C_nH_{2n} & = & 2(1 + \ln 2),\\
+\sum_{n=1}^\infty\,\frac{1}{8^n}\,\binom{2n}{n}h_{n}& = & \frac{\sqrt{2}}{2}\,\ln 2,\\
+\sum_{n=1}^\infty\,\frac{1}{4^n}\,C_nh_{n} & = & 2.
+\end{eqnarray*}
+In particular, letting $x = (1+ \sqrt{5})/16$ and $ x = (1-\sqrt{5})/16$ in~\eqref{eq:hodd_gf}, respectively, in view of the fact that
+$$\sqrt{3 \pm\sqrt{5}} = \frac{\sqrt{2}}{2}\,(\sqrt{5} \pm 1)$$
+and Binet's formula
+$$F_n = \frac{1}{\sqrt{5}}\left[\left(\frac{1+\sqrt{5}}{2}\right)^n - \left(\frac{1-\sqrt{5}}{2}\right)^n\right],$$
+we find that
+$$\sum_{n=1}^\infty\,\frac{1}{8^n}\binom{2n}{n}h_nF_n = \frac{1}{\sqrt{10}}\,\ln 2 + \frac{1}{\sqrt{2}}\ln\left(\frac{3 + \sqrt{5}}{2}\right),$$
+which is the result \eqref{eq:7}.
+
+Another step along this path is to apply operator $x\frac{d}{dx}$. To avoid tedious demonstration, we will focus on the generating function~\eqref{eq:hodd_gf}. Applying $x\frac{d}{dx}$ to
+\eqref{eq:hodd_gf} yields
+$$\sum_{n=1}^\infty\,n{2n \choose n}h_nx^n = \frac{2x}{(1-4x)^{3/2}} - \frac{x\ln(1-4x)}{(1-4x)^{3/2}}.$$
+If we set $x = 1/8$, we get
+$$\sum_{n=1}^\infty\,\frac{n}{8^n}{2n \choose n}h_n = \frac{1}{2}\sqrt{2} +\frac{1}{4}\sqrt{2} \ln 2.$$
+Operating again by $x\frac{d}{dx}$, we obtain
+$$\sum_{n=1}^\infty\,n^2{2n \choose n}h_nx^n =  \frac{2x}{(1-4x)^{3/2}} - \frac{x\ln(1-4x)}{(1-4x)^{3/2}} + 
+\frac{16x}{(1-4x)^{5/2}} - \frac{6x\ln(1-4x)}{(1-4x)^{5/2}}.$$
+Setting $x = 1/8$, we find
+$$\sum_{n=1}^\infty\,\frac{n^2}{8^n}{2n \choose n}h_n = \frac{3}{2}\sqrt{2} +\frac{5}{8}\sqrt{2} \ln 2.$$
+In general, by induction, for any positive integer $k$, we find that
+$$\sum_{n=1}^\infty\,\frac{n^k}{8^n}{2n \choose n}h_n = p_k\sqrt{2} + q_k\sqrt{2}\ln 2,$$
+where $p_k$ and $q_k$ are rational numbers.
+
+It seems that the routine integration operator does not work very well in our cases. For example, if we divide both sides of~\eqref{eq:h_gf} by $x$ and then integrate, we obtain
+$$\sum_{n=1}^\infty\,\frac{1}{n}\,\binom{2n}{n}H_n\,x^n =\int_0^x\, \frac{2}{t\sqrt{1-4t}}\,\ln\left(\frac{1+\sqrt{1 -4t}}{2\sqrt{1-4t}}\right)\,dt.$$
+This integral is a ``higher transcendent". Indeed, Mathematica gives
+$$\sum_{n=1}^\infty\,\frac{1}{n}\,\binom{2n}{n}H_n\,x^n = 2\ln\sqrt{1-4x}\ln\frac{1+ \sqrt{1-4x}}{1-\sqrt{1-4x}} + 2\ln 2\ln(1 + \sqrt{1-4x}) $$
+$$-\ln^2(1+ \sqrt{1-4x}) + 2\mbox{Li}_2(-\sqrt{1-4x}) - 2\mbox{Li}_2(\sqrt{1-4x}) - 2\mbox{Li}_2\left(\frac{1-\sqrt{1-4x}}{2}\right) - \ln^22 + \frac{\pi^2}{2},$$
+where $\mbox{Li}_2(x)$ is the dilogarithm. In this case, we have difficulty singling out interesting series since the known exact values of $\mbox{Li}_2$ are very limited.
+
+To bypass this block, we take another route out of these generating functions through the trigonometric substitution $x = \frac{1}{4}\sin^2t$. Beginning with~\eqref{eq:h_gf} and~\eqref{eq:c_gf}, we have
+\begin{equation}
+\sum_{n=1}^\infty\,\frac{1}{4^n}\,\binom{2n}{n}H_n\sin^{2n}t = \frac{2}{\cos t}\,\ln\left(\frac{1 + \cos t}{2\cos t}\right),
+\label{eq:22}
+\end{equation}
+\begin{equation}
+\sum_{n=1}^\infty\,\frac{1}{4^{n+1}}\,C_{n}H_n\sin^{2(n+1)}t =\ln 2 + \cos t\ln(2\cos t) - (1 + \cos t)\ln(1 + \cos t),
+\label{eq:23}
+\end{equation}
+respectively. If we multiply \eqref{eq:22} and \eqref{eq:23} by $\cos t$ and then integrate them from $0$ to $\pi/2$, respectively, we obtain
+\begin{equation}
+\sum_{n=1}^\infty\,\frac{1}{4^n(2n+1)}\,\binom{2n}{n}H_n = 4G - \pi\ln 2,
+\label{eq:24}
+\end{equation}
+\begin{equation}
+\sum_{n=1}^\infty\,\frac{1}{4^n(2n+3)}\,C_{n}H_n = 2 + 4\ln 2 - 4G -\pi + \pi\ln2,
+\end{equation}
+where $G$ is Catalan's constant, which is defined by
+$$G := \sum_{k=0}^\infty\,\frac{(-1)^k}{(2k+1)^2}.$$
+If we multiply \eqref{eq:22} by $t\cos t$ and then integrate from $0$ to $\pi/2$, since (for example, using integration by parts)
+$$\int_0^{\pi/2}\,t\cos t\sin^{2n}t\,dt = \frac{1}{2n+1}\left(\frac{\pi}{2} - \frac{(2n)!!}{(2n+1)!!}\right),$$
+it follows that
+\begin{equation}
+\sum_{n=1}^\infty\,\frac{1}{4^n(2n+1)}\,\binom{2n}{n}H_n\left(\frac{\pi}{2} - \frac{(2n)!!}{(2n+1)!!}\right) =\frac{1}{4}(8\pi G - \pi^2\ln 2 - 7\zeta(3)),
+\label{eq:26}
+\end{equation}
+where $\zeta(x)$ is Riemann's zeta function. As an immediate consequence of 
+\eqref{eq:24} and \eqref{eq:26}, we discover another interesting series
+\begin{equation}
+\sum_{n=1}^\infty\,\frac{1}{(2n+1)^2}\,H_n = \frac{1}{4}\,(7\zeta(3) -\pi^2\ln 2). 
+\end{equation}
+Next, substituting $x = \frac{1}{4}\sin^2t$ in \eqref{eq:h_gf}, \eqref{eq:k_gf}, \eqref{eq:h_gf} and \eqref{eq:hodd_gf}, respectively, we obtain
+\begin{eqnarray}
+\sum_{n=1}^\infty\,\frac{1}{4^n}\binom{2n}{n}(H_{2n} - H_n)\sin^{2n}t & = & - \frac{1}{\cos t}\,\ln\left(\frac{1 + \cos t}{2}\right), \label{eq:28}\\
+\sum_{n=1}^\infty\,\frac{1}{4^n\,n}\binom{2n}{n}(H_{2n-1} - H_n)\sin^{2n}t & = & \ln^2\left(\frac{1 + \cos t}{2}\right),\label{eq:29}\\
+\sum_{n=1}^\infty\,\frac{1}{4^n}\binom{2n}{n}H_{2n}\sin^{2n}t & = & \frac{1}{\cos t}\,\left[\ln\left(\frac{1 + \cos t}{2}\right) -2\ln\cos t\right],\label{eq:30}\\
+\sum_{n=1}^\infty\,\frac{1}{4^n\,n}\binom{2n}{n}h_{n}\sin^{2n}t & = & - \frac{1}{\cos t}\,\ln\cos t. \label{eq:31}
+\end{eqnarray}
+By manipulating the parameter $t$ in
+Eqs.~\eqref{eq:28}--\eqref{eq:31},
+we obtain many new interesting series. For example,  if we multiply
+Eqs.~\eqref{eq:28}--\eqref{eq:31},
+by $\cos t$ and then integrate them from $0$ to $\pi/2$, we find
+\begin{eqnarray*}
+\sum_{n=1}^\infty\,\frac{1}{4^n(2n+1)}\,\binom{2n}{n}(H_{2n} -H_n) & = & \pi\ln 2 - 2G,\\
+\sum_{n=1}^\infty\,\frac{1}{4^n\,n(2n+1)}\,\binom{2n}{n}(H_{2n-1}-H_n) & = & 2 + 2\ln 2  +\ln^22 + 4G -\pi(1+2\ln2),\\
+\sum_{n=1}^\infty\,\frac{1}{4^n(2n+1)}\,\binom{2n}{n}H_{2n} & = & 2G,\\
+\sum_{n=1}^\infty\,\frac{1}{4^n\,(2n+1)}\,\binom{2n}{n}h_n & = & \frac{1}{2}\,\pi\ln 2.
+\end{eqnarray*}
+Similarly, we can search for interesting series involving the Catalan numbers based on the identities \eqref{eq:ch_gf}, \eqref{eq:ch2_gf} and \eqref{eq:codd_gf}. Details are left to the reader.
+
+\section{Concluding remarks}
+\label{sec4}
+
+We conclude this paper with two remarks. 
+\begin{enumerate}
+\item To assure accuracy of the results, we verified all the numerical series identities through {\it Mathematica}.
+\item  Since the first glance at the paper \cite{Chu}, the author has been stimulated by both breadth and beauty of these identities, and searched for a different way of dealing with Gauss summation formulas. For instance, we may apply the differential operator to hypergeometric summation formulas, instead of parameter replacements used in \cite{Chu}. In view of
+$$\sum_{n=1}^\infty\,\frac{(a)_n(b)_n}{n!(c)_n}\,H_n(c-1) = \frac{\Gamma(c)\Gamma(c-a-b)}{\Gamma(c-a)\Gamma(c-b)}\,(\psi(c-a) + \psi(c-b) -\psi(c) -\psi(c-a-b)),$$
+where $(x)_n = x(x+1) \cdots (x + n -1), H_n(x) = \sum_{k=1}^n\,\frac{1}{k+x}$ and $\psi$ is the polygamma function, we can derive further interesting series
+involving nonlinear binomial coefficients and generalized harmonic numbers like
+$$
+\sum_{n=1}^\infty\,\frac{1}{16^n(2n-1)^2}\,{2n \choose n}^2 H_n = \frac{12}{\pi} - \frac{16}{\pi}\ln 2.
+$$
+The interested reader is encouraged to pursue results in this direction.
+\end{enumerate}
+
+\section{Acknowledgments} The author is grateful to the referee for valuable comments and suggestions. This helped improve the original version of the article and enrich its contents.
+
+
+\begin{thebibliography}{10}
+
+\bibitem{Apostol}
+T. Apostol, {\it Mathematical Analysis}, 2nd edition, Addison Wesley,
+1974.
+
+\bibitem{Borwein}
+D. Borwein and J. M. Borwein, On an intriguing integral and some
+series related to $\zeta(4)$, {\it Proc.\ Amer.\ Math.\ Soc.} {\bf
+123} (1995), 1191--1198.
+
+\bibitem{Boy} K. N. Boyadzhiev, Series with central binomial
+coefficients, Catalan numbers, and harmonic numbers, {\it J.\ Integer
+Seq.\ }  {\bf 15} (2012), 
+\href{https://cs.uwaterloo.ca/journals/JIS/VOL15/Boyadzhiev/boyadzhiev6.html}{Article 12.1.7}.
+
+\bibitem{Chen}
+H. Chen, Evaluations of some variant Euler sums, {\it J.\ Integer
+Seq.\ } {\bf 9} (2006), 
+\href{https://cs.uwaterloo.ca/journals/JIS/VOL9/Chen/chen78.html}{Article 06.2.3}.
+
+\bibitem{Chu}
+W. Chu and L. D. Donno, Hypergeometric series and harmonic number
+identities, {\it Adv.\ Appl.\ Math.\ } {\bf 34} (2005), 123--137.
+
+\bibitem{GKP} 
+R. Graham, D. Knuth and O. Patashnik, {\it Concrete
+Mathematics}, 2nd edition, Addison-Wesley, 1994.
+
+\bibitem{Gould}
+H. Gould, {\it Combinatorial Identities}, published by the author,
+revised edition, 1972.
+
+\bibitem{Knuth}
+D. Knuth, Problem 11832, {\it Amer.\ Math.\ Monthly} {\bf 122} (2015), 390.
+
+\bibitem{Lehmer}
+D. H. Lehmer, Interesting series involving the central binomial
+coefficient, {\it Amer.\ Math.\ Monthly} {\bf 92} (1985), 449--457.
+
+\bibitem{Stanley} 
+R. Stanley, {\it Catalan Numbers}, Cambridge University Press, 2015.
+
+\end{thebibliography}
+
+\bigskip
+\hrule
+\bigskip
+
+\noindent {\it 2010 Mathematics Subject Classification:} Primary 11B83; Secondary 05A10.
+
+\noindent \emph{Keywords:} central binomial coefficient, Catalan number, harmonic number, generating function, interesting series.
+
+\bigskip
+\hrule
+\bigskip
+
+\noindent (Concerned with sequences \underline{A000984},
+\underline{A001008}, \underline{A000108},  \underline{A005408} and
+\underline{A000045})\\ 
+
+
+\bigskip
+\hrule
+\bigskip
+
+\vspace*{+.1in}
+\noindent
+Received September 16 2015;
+revised version received  October 23 2015.
+Published in {\it Journal of Integer Sequences}, December 17 2015.
+
+\bigskip
+\hrule
+\bigskip
+
+\noindent
+Return to
+\htmladdnormallink{Journal of Integer Sequences home page}{http://www.cs.uwaterloo.ca/journals/JIS/}.
+\vskip .1in
+
+\end{document}
+
+
